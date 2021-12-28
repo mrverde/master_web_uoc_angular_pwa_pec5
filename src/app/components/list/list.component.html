@@ -1,0 +1,21 @@
+<h1 class="character--title">Rick and Morty Characters</h1>
+
+<mat-spinner *ngIf="loading" [diameter]="150" class="character--spinner"></mat-spinner>
+<div class="character--container">
+    <mat-card *ngFor="let character of characters" class="character--card animate__animated animate__bounce animate__fadeIn">
+        <mat-card-header>
+            <mat-card-title>{{character.name}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src={{character.image}} alt="Photo of a Rick and Morty Character">
+        <mat-card-actions class="character--gotopage">
+            <button mat-button color="accent" [routerLink]="['/detail', character.id]">Go to Character page</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+
+<div class="character--buttoncontainer">
+    <button *ngIf="currentPage != 1" mat-flat-button color="primary" (click)="prevPage()" class="button">Prev
+        page</button>
+    <button *ngIf="currentPage != maxPages" mat-flat-button color="primary" (click)="nextPage()" class="button">Next
+        page</button>
+</div>

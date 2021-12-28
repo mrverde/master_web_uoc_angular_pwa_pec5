@@ -1,0 +1,37 @@
+<div class="detail--container">
+    <div class="detail--subcontainer">
+        <h1>{{character.name}}</h1>
+        <img mat-card-image src={{character.image}} alt="Photo of a Rick and Morty Character" class="detail--image">
+        <p *ngIf="character.episode"><strong>Number of episodes:</strong> {{character.episode.length}} </p>
+        <div class="detail--btn-container">
+            <button mat-flat-button color="primary" (click)="toggleShowDetails()" class="detail--btn">{{showDetails ?
+                "Hide all details" : "Show all details"}}</button>
+        </div>
+        <mat-tab-group *ngIf="showDetails">
+            <mat-tab label="Profile">
+                <div>
+                    <p *ngIf="character.type"><strong>Type:</strong> {{character.type}} </p>
+                    <p *ngIf="character.status"><strong>Status:</strong> {{character.status}} </p>
+                    <p *ngIf="character.species"><strong>Specie:</strong> {{character.species}} </p>
+                    <p *ngIf="character.gender"><strong>Gender:</strong> {{character.gender}} </p>
+                    <p *ngIf="character.location"><strong>Location:</strong> {{character.location.name}} </p>
+                    <p *ngIf="character.origin"><strong>Origin:</strong> {{character.origin.name}} </p>
+                </div>
+            </mat-tab>
+            <mat-tab label="More data"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus leo eu ipsum egestas commodo. Nulla in sollicitudin felis. Nam fringilla eget lorem eu luctus. In aliquam nulla augue, id consectetur ante rhoncus in. Etiam sit amet nulla
+                ut libero varius laoreet quis cursus ex. Proin semper, mauris vitae vehicula congue, lectus orci scelerisque purus, vel euismod velit libero rutrum odio. Nunc libero ipsum, consectetur a mattis a, congue at eros. Nunc facilisis non nisl
+                sed rutrum. Nulla facilisi. Nam pretium eros leo, id faucibus urna dignissim at. Nullam dapibus, est ac hendrerit tempus, metus eros vulputate libero, id faucibus quam nisi id mi. Sed tristique enim id mattis finibus. Vivamus nisi purus,
+                tincidunt ut mauris vitae, facilisis faucibus ligula. Curabitur semper massa arcu, id cursus dui iaculis a. Sed purus libero, rutrum id erat a, molestie pulvinar nibh. Etiam sed tortor ut nisi laoreet porta vitae quis justo. Nullam commodo,
+                nunc venenatis imperdiet venenatis, nisi augue volutpat elit, non gravida lacus ipsum sed massa. Aenean iaculis tempor massa. Sed sit amet pharetra dui. Sed diam nibh, interdum a dapibus ut, aliquam sed odio. Mauris mollis pellentesque
+                enim vel feugiat. Ut volutpat tellus augue, eget tincidunt augue pellentesque sed. Proin quis felis velit. Pellentesque convallis turpis et elit feugiat blandit. Vivamus dignissim dictum egestas. Quisque gravida velit ante, eget pretium
+                neque bibendum eu. Donec diam nibh, ultricies rhoncus viverra eu, ultricies ac leo. Duis sit amet odio sodales, placerat neque ac, elementum erat. Fusce id dui eu odio dapibus volutpat. Nullam a urna ut eros pulvinar aliquet. Ut et justo
+                in nulla vehicula varius in sed enim. Cras ornare ultricies velit, eu tincidunt augue facilisis vel. Integer viverra massa mi, id mattis odio commodo at.
+            </mat-tab>
+        </mat-tab-group>
+
+        <div class="detail--btn-container">
+
+            <button mat-flat-button color="primary" [routerLink]="['/']" class="detail--btn">Go back</button>
+        </div>
+    </div>
+</div>
